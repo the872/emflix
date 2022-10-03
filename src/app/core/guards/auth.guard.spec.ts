@@ -10,5 +10,6 @@ beforeEach(() => {
 
 it('should create', () => {
   guard = TestBed.inject(AuthGuard);
+  // @ts-ignore
   expect(guard).toBeTruthy();
 });
