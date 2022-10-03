@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 import { HeaderModule } from '@shared/components/header/header.module';
 import { MovieCardModule } from '@core/components/movie-card/movie-card.module';
 import { LoadingBarModule } from '@ngx-loading-bar/core';
+import { MovieGalleryModule } from '@features/movie-gallery/movie-gallery.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,6 +25,9 @@ import { LoadingBarModule } from '@ngx-loading-bar/core';
     LoadingBarRouterModule,
     HeaderModule,
     MovieCardModule,
+    LoadingBarModule,
+    MovieGalleryModule,
+    LoadingBarRouterModule,
     LoadingBarModule,
   ],
   providers: [
