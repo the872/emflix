@@ -24,4 +24,4 @@ jobs:
       - run: npm ci --legacy-peer-deps
       - run: npm run build --if-present
       - run: npm test
-      - run: npm run e2e:ci
+#       - run: npm run e2e:ci
