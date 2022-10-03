@@ -33,6 +33,7 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v2
 #       - run: npm run e2e:ci
+      - run: npm install
       - run: npm run final-build --if-present
 #       - run: npm test
       - name: Upload artifact
