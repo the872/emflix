@@ -4,7 +4,7 @@
 .version
 .angular
 # compiled output
-/dist
+#/dist
 /tmp
 /out-tsc
 # Only exists if Bazel was run
