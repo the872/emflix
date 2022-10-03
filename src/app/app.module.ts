@@ -10,6 +10,8 @@ import { LoadingBarRouterModule } from '@ngx-loading-bar/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderModule } from '@shared/components/header/header.module';
+import { MovieCardModule } from '@core/components/movie-card/movie-card.module';
+import { LoadingBarModule } from '@ngx-loading-bar/core';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,7 +22,9 @@ import { HeaderModule } from '@shared/components/header/header.module';
     CoreModule,
     HttpClientModule,
     LoadingBarRouterModule,
-    HeaderModule
+    HeaderModule,
+    MovieCardModule,
+    LoadingBarModule,
   ],
   providers: [
     { provide: 'BASE_URL', useValue: environment.baseurl },
