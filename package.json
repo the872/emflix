@@ -1,6 +1,6 @@
 {
   "name": "ng-new-app",
-  "version": "1.0",
+  "version": "1.0.0",
   "description": "Movies and more!",
   "scripts": {
     "ng": "ng",
