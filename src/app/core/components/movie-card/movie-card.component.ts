@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-movie-card',
   templateUrl: './movie-card.component.html',
   styleUrls: ['./movie-card.component.scss'],
 })
-export class MovieCardComponent {}
+export class MovieCardComponent {
+  @Input() movieData: any;
+}

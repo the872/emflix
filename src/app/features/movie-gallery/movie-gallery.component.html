@@ -2,12 +2,6 @@
   <div
     class="carousel carousel-center space-x-10 bg-secondary-800 md:mx-10 px-12 md:px-0 snap-x h-full my-2 items-center"
   >
-    <app-movie-card></app-movie-card>
-    <app-movie-card></app-movie-card>
-    <app-movie-card></app-movie-card>
-    <app-movie-card></app-movie-card>
-    <app-movie-card></app-movie-card>
-    <app-movie-card></app-movie-card>
-    <app-movie-card></app-movie-card>
+    <app-movie-card *ngFor="let movie of movies" [movieData]="movie"></app-movie-card>
   </div>
 </div>

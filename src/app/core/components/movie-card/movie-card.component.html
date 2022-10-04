@@ -3,14 +3,15 @@
     <p
       class="absolute bottom-3 right-3 font-bold text-lg bg-ratings text-white rounded-box px-3 py-2 text-center w-fit"
     >
-      5.8/10
+      {{ movieData.rating }}/10
     </p>
     <img
-      class="rounded"
-      src="https://m.media-amazon.com/images/M/MV5BMjE3MjAyNzM5NV5BMl5BanBnXkFtZTgwMjA5OTg5NjE@._V1_SY1000_SX677_AL_.jpg"
+      class="rounded aspect-poster object-cover h-500 w-300"
+      src="{{ movieData.cover }}"
       alt="movie-screenshot"
+      onerror="this.src = './assets/images/defaultPoster.png';"
     />
   </div>
-  <p class="font-bold text-m text-white mt-2">Drama | History</p>
-  <p class="font-bold text-m text-mainSecondary mb-1">English</p>
+  <p class="font-bold text-m text-white mt-2 h-5">{{ movieData.genres }}</p>
+  <p class="font-bold text-m text-mainSecondary mb-1 h-5">{{ movieData.language }}</p>
 </div>

@@ -23,11 +23,11 @@ module.exports = {
       '1/2': '50%',
       '3/4': '75%',
       full: '100%',
-      '300': '300px',
+      300: '300px',
       '90vw': '90vw',
     },
     minHeight: {
-      '500': '500px',
+      500: '500px',
     },
     fontSize: {
       tiny: '8px',
@@ -59,7 +59,11 @@ module.exports = {
       },
     },
     extend: {
+      aspectRatio: {
+        poster: '8 / 13',
+      },
       width: {
+        300: '300px',
         '1/20': '5%',
         '1/10': '10%',
         '1.5/10': '15%',
@@ -75,6 +79,7 @@ module.exports = {
         '9.5/10': '95%',
       },
       height: {
+        500: '500px',
         '1/10': '10%',
         '1.5/10': '15%',
         '3/10': '30%',
@@ -87,10 +92,10 @@ module.exports = {
         '9/10': '90%',
         '9.5/10': '95%',
       },
-    }
+    },
   },
   variants: {},
-  plugins: [require("daisyui")],
+  plugins: [require('daisyui')],
   corePlugins: {
     outline: false,
   },
