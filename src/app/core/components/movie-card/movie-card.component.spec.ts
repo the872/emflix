@@ -19,6 +19,12 @@ describe('MovieCardComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(MovieCardComponent);
     component = fixture.componentInstance;
+    component.movieData = {
+      rating: '2.4',
+      cover: './assets/images/defaultPoster.png',
+      genres: 'Horror',
+      language: 'English',
+    };
     fixture.detectChanges();
   });
 
