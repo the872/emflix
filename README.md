@@ -1,27 +1,17 @@
-# emflix (ng-new-app)
+# emflix
 
 Make sure you have node.js latest stable & @angular-cli installed on your system before running below commands
 
-- Run
+### Run
 
-```bash
-npx ng-new-app your-app-name
-```
+- Run `npm install`
+- Run `npm start`
 
-if you don't have npx, Run -
+### Deploy
 
-```bash
-sudo npm i ng-new-app -g
-```
+- Run `npm run deploy`
 
-and
-
-```bash
-ng-new-app your-app-name
-```
-
-- Run`npm install`
-- Run`npm start`
+### Other Commands
 
 | command                   | What it does?                                                        | Thanks to Plugin                                                                 |
 | ------------------------- | :------------------------------------------------------------------- | :------------------------------------------------------------------------------- |

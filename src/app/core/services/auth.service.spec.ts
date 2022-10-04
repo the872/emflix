@@ -10,5 +10,6 @@ beforeEach(() => {
 
 it('should create', () => {
   service = TestBed.inject(AuthService);
+  // @ts-ignore
   expect(service).toBeTruthy();
 });
