@@ -43,7 +43,7 @@
       <li><a href="/">All</a></li>
       <ng-container *ngFor="let genre of allGenres">
         <li>
-          <a href="?{{ genre }}">{{ genre }}</a>
+          <a href="?genre={{ genre }}">{{ genre }}</a>
         </li>
       </ng-container>
     </ul>

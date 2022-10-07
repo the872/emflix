@@ -18,8 +18,7 @@ export class MovieGalleryComponent implements OnInit {
     | undefined;
   ngOnInit() {
     const checkHash = window.location.search === '';
-    const currentHash =
-      window.location.search.indexOf('=') > -1 ? window.location.search.slice(1, -1) : window.location.search.slice(1);
+    const currentFilter = new URL(window.location.href).searchParams.get('genre');
     if (checkHash) {
       this.movies = movies.movie_mocks.map((a, index) => {
         return {
@@ -36,22 +35,24 @@ export class MovieGalleryComponent implements OnInit {
         };
       });
     } else {
-      this.movies = movies.movie_mocks
-        .filter((i) => i.genres.includes(currentHash))
-        .map((a, index) => {
-          return {
-            title: a?.title,
-            plot: a?.plot,
-            cast: a?.cast?.join()?.replace(new RegExp(',', 'g'), ' | ') || '',
-            runtime: a?.runtime,
-            year: a?.year,
-            genres: a?.genres?.join()?.replace(new RegExp(',', 'g'), ' | ') || '',
-            language: a?.languages[0] || '',
-            rating: a?.imdb.rating || '',
-            cover: a?.poster || '',
-            index,
-          };
-        });
+      if (typeof currentFilter === 'string') {
+        this.movies = movies.movie_mocks
+          .filter((i) => i.genres.includes(currentFilter))
+          .map((a, index) => {
+            return {
+              title: a?.title,
+              plot: a?.plot,
+              cast: a?.cast?.join()?.replace(new RegExp(',', 'g'), ' | ') || '',
+              runtime: a?.runtime,
+              year: a?.year,
+              genres: a?.genres?.join()?.replace(new RegExp(',', 'g'), ' | ') || '',
+              language: a?.languages[0] || '',
+              rating: a?.imdb.rating || '',
+              cover: a?.poster || '',
+              index,
+            };
+          });
+      }
     }
   }
 }
