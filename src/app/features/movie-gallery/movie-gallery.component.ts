@@ -17,22 +17,30 @@ export class MovieGalleryComponent implements OnInit {
     | { cover: string | undefined; genres: string | undefined; rating: number | undefined; language: any }
     | undefined;
   ngOnInit() {
-    // @ts-ignore
-    this.movies = movies.movie_mocks.map((a) => {
-      const checkHash = window.location.search === '';
-      const currentHash =
-        window.location.search.indexOf('=') > -1
-          ? window.location.search.slice(1, -1)
-          : window.location.search.slice(1);
-      console.log(currentHash);
-      return {
-        genres: a?.genres?.join()?.replace(new RegExp(',', 'g'), ' | ') || '',
-        language: a?.languages[0] || '',
-        rating: a?.imdb.rating || '',
-        cover: a?.poster || '',
-        show: checkHash || a.genres.includes(currentHash),
-      };
-    });
-    console.log(this.movies);
+    const checkHash = window.location.search === '';
+    const currentHash =
+      window.location.search.indexOf('=') > -1 ? window.location.search.slice(1, -1) : window.location.search.slice(1);
+    if (checkHash) {
+      this.movies = movies.movie_mocks.map((a) => {
+        return {
+          genres: a?.genres?.join()?.replace(new RegExp(',', 'g'), ' | ') || '',
+          language: a?.languages[0] || '',
+          rating: a?.imdb.rating || '',
+          cover: a?.poster || '',
+        };
+      });
+    } else {
+      this.movies = movies.movie_mocks
+        .filter((i) => i.genres.includes(currentHash))
+        .map((a) => {
+          console.log(currentHash);
+          return {
+            genres: a?.genres?.join()?.replace(new RegExp(',', 'g'), ' | ') || '',
+            language: a?.languages[0] || '',
+            rating: a?.imdb.rating || '',
+            cover: a?.poster || '',
+          };
+        });
+    }
   }
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import * as movies from '../../../../assets/data/movie_mocks';
 
@@ -7,7 +7,7 @@ import * as movies from '../../../../assets/data/movie_mocks';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
   allGenres: (Array<string> | undefined)[] | undefined;
   selectedGenres: [] | undefined;
   ngOnInit() {
