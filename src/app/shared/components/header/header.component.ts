@@ -10,7 +10,10 @@ import * as movies from '../../../../assets/data/movie_mocks';
 export class HeaderComponent implements OnInit {
   allGenres: (Array<string> | undefined)[] | undefined;
   selectedGenres: [] | undefined;
+  currentPage: string | null | undefined;
   ngOnInit() {
+    const cLoc = new URL(window.location.href);
+    this.currentPage = cLoc.search === '' ? '/' : cLoc.searchParams.get('genre');
     const finalArray: string[][] = [];
     movies.movie_mocks.forEach((a: { genres: Array<string> }) => {
       const resultGenres = a.genres;
