@@ -19,11 +19,13 @@ export class HeaderComponent implements OnInit {
       const resultGenres = a.genres;
 
       for (let b = 0; b < resultGenres.length; b++) {
+        const extractGenre = resultGenres[b];
         // @ts-ignore
-        if (!finalArray.includes(resultGenres[b])) {
-          // @ts-ignore
-          finalArray.push(resultGenres[b]);
+        if (finalArray.includes(extractGenre)) {
+          continue;
         }
+        // @ts-ignore
+        finalArray.push(extractGenre);
       }
     });
     this.allGenres = finalArray;

@@ -24,7 +24,7 @@ export class MovieGalleryComponent implements OnInit {
         return {
           title: a?.title,
           plot: a?.plot,
-          cast: a?.cast?.join()?.replace(new RegExp(',', 'g'), ' | ') || '',
+          cast: a?.cast?.join() || '',
           runtime: a?.runtime,
           year: a?.year,
           genres: a?.genres?.join()?.replace(new RegExp(',', 'g'), ' | ') || '',
@@ -42,7 +42,7 @@ export class MovieGalleryComponent implements OnInit {
             return {
               title: a?.title,
               plot: a?.plot,
-              cast: a?.cast?.join()?.replace(new RegExp(',', 'g'), ' | ') || '',
+              cast: a?.cast?.join()?.replace(new RegExp(',', 'g'), ', ') || '',
               runtime: a?.runtime,
               year: a?.year,
               genres: a?.genres?.join()?.replace(new RegExp(',', 'g'), ' | ') || '',
