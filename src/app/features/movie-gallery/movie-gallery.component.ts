@@ -21,24 +21,35 @@ export class MovieGalleryComponent implements OnInit {
     const currentHash =
       window.location.search.indexOf('=') > -1 ? window.location.search.slice(1, -1) : window.location.search.slice(1);
     if (checkHash) {
-      this.movies = movies.movie_mocks.map((a) => {
+      this.movies = movies.movie_mocks.map((a, index) => {
         return {
+          title: a?.title,
+          plot: a?.plot,
+          cast: a?.cast?.join()?.replace(new RegExp(',', 'g'), ' | ') || '',
+          runtime: a?.runtime,
+          year: a?.year,
           genres: a?.genres?.join()?.replace(new RegExp(',', 'g'), ' | ') || '',
           language: a?.languages[0] || '',
           rating: a?.imdb.rating || '',
           cover: a?.poster || '',
+          index,
         };
       });
     } else {
       this.movies = movies.movie_mocks
         .filter((i) => i.genres.includes(currentHash))
-        .map((a) => {
-          console.log(currentHash);
+        .map((a, index) => {
           return {
+            title: a?.title,
+            plot: a?.plot,
+            cast: a?.cast?.join()?.replace(new RegExp(',', 'g'), ' | ') || '',
+            runtime: a?.runtime,
+            year: a?.year,
             genres: a?.genres?.join()?.replace(new RegExp(',', 'g'), ' | ') || '',
             language: a?.languages[0] || '',
             rating: a?.imdb.rating || '',
             cover: a?.poster || '',
+            index,
           };
         });
     }

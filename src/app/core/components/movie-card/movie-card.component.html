@@ -1,4 +1,7 @@
-<div class="carousel-item flex flex-col w-2.5/10 h-8.5/10 snap-center p-1/10 min-w-300 cursor-pointer">
+<label
+  for="my-modal-{{ movieData.index }}"
+  class="carousel-item flex flex-col w-2.5/10 h-8.5/10 snap-center p-1/10 min-w-300 cursor-pointer modal-button"
+>
   <div class="relative">
     <p
       class="absolute bottom-3 right-3 font-bold text-lg bg-ratings text-white rounded-box px-3 py-2 text-center w-fit"
@@ -14,4 +17,20 @@
   </div>
   <p class="font-bold text-m text-white mt-2 h-5">{{ movieData?.genres }}</p>
   <p class="font-bold text-m text-mainSecondary mb-1 h-5">{{ movieData?.language }}</p>
+</label>
+
+<input type="checkbox" id="my-modal-{{ movieData.index }}" class="modal-toggle" />
+<div class="modal modal-bottom sm:modal-middle">
+  <div class="modal-box">
+    <h3 class="font-bold text-lg">{{ movieData?.title }}</h3>
+    <h3 class="py-4">{{ movieData?.genres }}</h3>
+    <p class="py-4">{{ movieData?.plot }}</p>
+    <p class="py-4">Cast: {{ movieData?.cast }}</p>
+    <p class="py-4">Runtime: {{ movieData?.runtime }} minutes</p>
+    <p class="py-4">Year Released: {{ movieData?.year }}</p>
+    <p class="py-4">Language: {{ movieData?.language }}</p>
+    <div class="modal-action">
+      <label for="my-modal-{{ movieData.index }}" class="btn">Close</label>
+    </div>
+  </div>
 </div>
